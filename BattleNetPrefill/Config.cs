@@ -22,7 +22,7 @@ namespace BattleNetPrefill
 
         public static readonly DebugConfig DebugConfig = new DebugConfig
         {
-            UseCdnDebugMode = false,
+            UseCdnDebugMode = true,
             CompareAgainstRealRequests = false
         };
 

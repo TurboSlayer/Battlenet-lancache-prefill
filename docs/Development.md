@@ -1,18 +1,18 @@
 
 # Development Pre-reqs
 
-Only the .NET 6 SDK is required to compile the project.  This can be installed through one of the following methods
+Only the .NET 7 SDK is required to compile the project.  This can be installed through one of the following methods
 
 ## Using Chocolatey
 ```powershell
-choco install dotnet-6.0-sdk
+choco install dotnet --version=7.0.0-preview3221754 --pre 
 # Needs to be removed, in order to resolve issue with Nuget being preconfigured wrong.  Will 
 # auto-regenerate on first run.
 Remove-Item "C:\Users\$Env:USERNAME\AppData\Roaming\NuGet\nuget.config"
 ```
 
 ## Manually
-The latest .NET 6.0 SDK can be found here : [.NET 6.0 SDK - Windows x64 Installer]( https://download.visualstudio.microsoft.com/download/pr/deb4711b-7bbc-4afa-8884-9f2b964797f2/fb603c451b2a6e0a2cb5372d33ed68b9/dotnet-sdk-6.0.300-win-x64.exe )
+The latest .NET 6.0 SDK can be found here : [.NET 7.0 SDK - Windows x64 Installer]( https://download.visualstudio.microsoft.com/download/pr/2b2a2f05-2381-4073-a774-80368dcfdef9/b63ad4ee1e933e45b9fefbbd2a5291ea/dotnet-sdk-7.0.100-preview.4.22252.9-win-x64.exe )
 
 # Compiling
 

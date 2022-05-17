@@ -91,7 +91,13 @@ namespace BattleNetPrefill
 
                 var ansiConsole = console.CreateAnsiConsole();
                 ansiConsole.MarkupLine($"Prefilling {Yellow(productsToProcess.Count)} products");
-                foreach (var code in productsToProcess.Distinct().ToList())
+
+                var products = new List<TactProduct>() { TactProduct.WorldOfWarcraft, TactProduct.WorldOfWarcraft, TactProduct.WorldOfWarcraft,
+                TactProduct.WorldOfWarcraft, TactProduct.WorldOfWarcraft, TactProduct.WorldOfWarcraft,
+                TactProduct.WorldOfWarcraft, TactProduct.WorldOfWarcraft, TactProduct.WorldOfWarcraft
+                };
+
+                foreach (var code in products)
                 {
                     var tactProductHandler = new TactProductHandler(code, ansiConsole, Config.DebugConfig);
                     await tactProductHandler.ProcessProductAsync(NoLocalCache, ForcePrefill);

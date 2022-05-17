@@ -25,7 +25,8 @@ namespace BattleNetPrefill
                 executableName = "BattleNetPrefill.exe";
             }
             return await new CliApplicationBuilder()
-                         .AddCommandsFromThisAssembly()
+                         .AddCommand(typeof(CliCommands.ListProductsCommand))
+                         .AddCommand(typeof(CliCommands.PrefillCommand))
                          .SetTitle("BattleNetPrefill")
                          .SetExecutableName(executableName)
                          .Build()
