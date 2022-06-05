@@ -11,6 +11,7 @@ using BattleNetPrefill.Parsers;
 using BattleNetPrefill.Structs;
 using BattleNetPrefill.Utils;
 using BattleNetPrefill.Web;
+using Spectre.Console;
 
 namespace BattleNetPrefill.Handlers
 {
@@ -113,11 +114,36 @@ namespace BattleNetPrefill.Handlers
             return entryExtra;
         }
 
+        //TODO document
+        //TODO impleement a command to list these
+        public void ListKnownTags()
+        {
+            // Finding the tag type that contains "enUS" as that will mean that this is the "language" type.  This is necessary, as the type will change
+            // on a per product basis, so it cannot be hardcoded ahead of time.
+            var englishTag = _downloadFile.tags.FirstOrDefault(e => e.Name == "enUS");
+            if (englishTag == null)
+            {
+                //TODO handle the case where there are no languages
+            }
+
+            // Now only list out language tags
+            var table = new Table();
+            table.AddColumn(new TableColumn("Tags"));
+
+            foreach (var tag in _downloadFile.tags.Where(e => e.Type == englishTag.Type))
+            {
+                table.AddRow($"{tag.Name}");
+            }
+
+            AnsiConsole.Write(table);
+        }
+
         /// <summary>
         /// Determines which files need to be downloaded, and queues them for download.
         /// </summary>
         public async Task HandleDownloadFileAsync(ArchiveIndexHandler archiveIndexHandler, CDNConfigFile cdnConfigFile, TactProduct targetProduct)
         {
+            ListKnownTags();
             Dictionary<MD5Hash, IndexEntry> unarchivedFileIndex = await IndexParser.ParseIndexAsync(_cdnRequestManager, RootFolder.data, cdnConfigFile.fileIndex);
 
             var tagsToUse = DetermineTagsToUse(targetProduct);
@@ -177,6 +203,10 @@ namespace BattleNetPrefill.Handlers
             if (targetProduct.DefaultTags == null)
             {
                 var tags = new List<string> { "enUS", "Windows", "noigr", "x86_64" };
+
+                tags.Add("deDE");
+                tags.Add("zhCN");
+
                 return _downloadFile.tags.Where(e => tags.Contains(e.Name)).ToList();
             }
 
