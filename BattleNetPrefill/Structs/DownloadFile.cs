@@ -30,9 +30,8 @@
         /// <summary>
         /// Tags are grouped in categories by different "types".  Some of these tags for example may include
         /// "language", "operating system", "architecture", "game feature".
-        ///
-        /// These tags are 
         /// </summary>
+        //TODO could this have a better type or enum?
         public short Type;
 
         public byte[] Mask;

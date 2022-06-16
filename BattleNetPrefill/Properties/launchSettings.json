@@ -2,7 +2,7 @@
   "profiles": {
     "Default": {
       "commandName": "Project",
-      "commandLineArgs": "prefill -p s2 --force"
+      "commandLineArgs": "prefill -p d3 --force"
     },
     "Prefill BOCW": {
       "commandName": "Project",

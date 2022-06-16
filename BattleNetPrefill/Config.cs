@@ -22,8 +22,8 @@ namespace BattleNetPrefill
 
         public static readonly DebugConfig DebugConfig = new DebugConfig
         {
-            UseCdnDebugMode = false,
-            CompareAgainstRealRequests = false
+            UseCdnDebugMode = true,
+            CompareAgainstRealRequests = true
         };
 
         public static readonly string LogFileBasePath = @$"{DirectorySearch.TryGetSolutionDirectory()}/Logs";
