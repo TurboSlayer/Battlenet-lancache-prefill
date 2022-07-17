@@ -4,6 +4,7 @@ using CliFx;
 
 namespace BattleNetPrefill
 {
+    // TODO - Feature - Implement support for beta apps.  Add a --all-betas  flag
     // TODO - Feature - Possibly add a clear cache command?
     // TODO - Tech Debt - Cleanup trim/single file warnings
     // TODO - Tech Debt - Dotnet 7 - See if AOT improvements help performance
