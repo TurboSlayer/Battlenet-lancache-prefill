@@ -6,9 +6,11 @@ namespace BattleNetPrefill
 {
     // TODO - Feature - Implement support for beta apps.  Add a --all-betas  flag
     // TODO - Feature - Possibly add a clear cache command?
+    // TODO - Feature - Consider implementing a multi-select command for interactively choosing which products to prefill.  Similar to steamPrefill.
     // TODO - Tech Debt - Cleanup trim/single file warnings
     // TODO - Tech Debt - Dotnet 7 - See if AOT improvements help performance
     // TODO - Documentation - Add battle.net slow download to known issues page ? https://lancache.net/docs/common-issues/
+    // TODO - Add link to Lancache discord + bnet prefill channel in readme
     // TODO - Resolve issues on Github issues
     // TODO - General - Promote this app on r/lanparty and discord
     // TODO - Test out https://github.com/microsoft/infersharpaction
