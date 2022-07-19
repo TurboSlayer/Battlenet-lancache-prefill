@@ -8,7 +8,7 @@
         public static string LightYellow(object inputObj) => $"[rgb(249,241,165)]{inputObj}[/]";
         public static string Green(object inputObj) => $"[green]{inputObj}[/]";
         public static string Grey(object inputObj) => $"[grey]{inputObj}[/]";
-        public static string Magenta(object inputObj) => $"[fuchsia]{inputObj}[/]";
+        public static string Magenta(object inputObj) => $"[rgb(217,85,217)]{inputObj}[/]";
         public static string Olive(object inputObj) => $"[yellow4_1]{inputObj}[/]";
         public static string Red(object inputObj) => $"[red]{inputObj}[/]";
         public static string White(object inputObj) => $"[white]{inputObj}[/]";

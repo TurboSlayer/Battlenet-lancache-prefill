@@ -20,7 +20,6 @@ namespace BattleNetPrefill.Utils
         /// Compares the current application version against the newest version available on Github Releases.  If there is a newer version, displays a message
         /// to the user.
         /// </summary>
-        /// <returns></returns>
         public static async Task CheckForUpdatesAsync()
         {
             try
