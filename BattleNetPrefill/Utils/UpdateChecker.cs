@@ -13,7 +13,7 @@ namespace BattleNetPrefill.Utils
 {
     public static class UpdateChecker
     {
-        private static readonly Uri _githubReleasesUri = new Uri("https://api.github.com/repos/tpill90/Battlenet-lancache-prefill/releases");
+        private static readonly string _repoName = "tpill90/Battlenet-lancache-prefill";
         private static readonly string _lastUpdateCheckFile = $"{Config.CacheDir}/lastUpdateCheck.txt";
 
         /// <summary>
@@ -34,10 +34,10 @@ namespace BattleNetPrefill.Utils
                 httpClient.Timeout = TimeSpan.FromSeconds(5);
                 httpClient.DefaultRequestHeaders.Accept.Clear();
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
-                httpClient.DefaultRequestHeaders.Add("User-Agent", "BattleNetPrefill");
+                httpClient.DefaultRequestHeaders.Add("User-Agent", _repoName);
 
                 // Query Github for a list of all available releases
-                var response = await httpClient.GetStringAsync(_githubReleasesUri);
+                var response = await httpClient.GetStringAsync(new Uri($"https://api.github.com/repos/{_repoName}/releases"));
                 GithubRelease latestRelease = JsonSerializer.Deserialize<List<GithubRelease>>(response)
                                                       .OrderByDescending(e => e.published_at)
                                                       .First();
@@ -82,7 +82,7 @@ namespace BattleNetPrefill.Utils
             table.AddRow($"A newer version is available {currentVersion} → {Olive(updateVersion)}");
             table.AddRow("");
             table.AddRow($"Download at :  ");
-            table.AddRow(LightBlue("https://github.com/tpill90/Battlenet-lancache-prefill/releases"));
+            table.AddRow(LightBlue($"https://api.github.com/repos/{_repoName}/releases"));
             table.AddRow("");
 
             // Render the table to the console
@@ -94,10 +94,6 @@ namespace BattleNetPrefill.Utils
     public class GithubRelease
     {
         public string tag_name { get; set; }
-        public string name { get; set; }
-        public bool draft { get; set; }
-        public bool prerelease { get; set; }
-        public DateTime created_at { get; set; }
         public DateTime published_at { get; set; }
     }
 }

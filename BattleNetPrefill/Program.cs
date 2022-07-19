@@ -20,15 +20,11 @@ namespace BattleNetPrefill
     {
         public static async Task<int> Main()
         {
-            var executableName = "BattleNetPrefill";
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            {
-                executableName = "BattleNetPrefill.exe";
-            }
+            //TODO implement .SetDescription()
             return await new CliApplicationBuilder()
                          .AddCommandsFromThisAssembly()
                          .SetTitle("BattleNetPrefill")
-                         .SetExecutableName(executableName)
+                         .SetExecutableName($"BattleNetPrefill{(OperatingSystem.IsWindows() ? ".exe" : "")}")
                          .Build()
                          .RunAsync();
         }

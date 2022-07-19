@@ -72,6 +72,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Spectre.Console.Analyzer" Version="0.44.0" />
   </ItemGroup>
 
   <ItemGroup>
