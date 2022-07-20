@@ -1,9 +1,12 @@
 
 # Battlenet-lancache-prefill
 
+[![](https://dcbadge.vercel.app/api/server/BKnBS4u?style=flat-square)](https://discord.com/invite/BKnBS4u)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=tpill90_Battlenet-lancache-prefill&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=tpill90_Battlenet-lancache-prefill)
 
 Automatically fills a [Lancache](https://lancache.net/) with games from Battle.net, so that subsequent downloads for the same content will be served from the Lancache, improving speeds and reducing load on your internet connection.
+
+![Prefilling game](docs/screenshot1-prefill.png)
 
 Inspired by the [lancache-autofill](https://github.com/zeropingheroes/lancache-autofill) project for Steam games.
 
@@ -14,9 +17,6 @@ Inspired by the [lancache-autofill](https://github.com/zeropingheroes/lancache-a
 * Multi-platform support (Windows, Linux, MacOS)
 * Self-contained application, no installation required!
 
-# Screenshots
-![Prefilling game](docs/screenshot1-prefill.png)
-
 # Installation
 1.  Download the latest version for your OS from the [Releases](https://github.com/tpill90/Battlenet-lancache-prefill/releases) page.
 2.  Unzip to a directory of your choice
@@ -25,6 +25,7 @@ Inspired by the [lancache-autofill](https://github.com/zeropingheroes/lancache-a
     - Unicode on Windows is not enabled by default, however adding the following to your Powershell `profile.ps1` will enable it.
     - `[console]::InputEncoding = [console]::OutputEncoding = [System.Text.UTF8Encoding]::new()`
     - If you do not already have a Powershell profile created, follow this step-by-step guide https://lazyadmin.nl/powershell/powershell-profile/
+
 # Basic Usage
 
 A single game can be downloaded by specifying a single product code
@@ -81,7 +82,7 @@ Running with the flag `--force` will override this behavior, and instead will al
 # Need Help?
 If you are running into any issues, feel free to open up a Github issue on this repository.
 
-You can also find us on the **LanCache.NET** Discord (https://discord.com/invite/BKnBS4u), in the `#battlenet-prefill` channel.
+You can also find us at the [**LanCache.NET** Discord](https://discord.com/invite/BKnBS4u), in the `#battlenet-prefill` channel.
 
 # Other Docs
 * [Development Configuration](/docs/Development.md)

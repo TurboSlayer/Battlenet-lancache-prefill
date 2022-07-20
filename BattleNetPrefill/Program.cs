@@ -17,6 +17,8 @@ namespace BattleNetPrefill
     // TODO - Spectre - Documentation on website needs to be updated to include changes
     // TODO - interface - Remove "Default : false" output from CliFx help text
     // TODO - I wish there was a way to color the help text output from CliFx.  Everything is so flat, and cant draw attention to important parts
+    // TODO - Document process for updating app
+    // TODO - readme - Update readme to match style of steam prefill readme
     public static class Program
     {
         public static async Task<int> Main()
